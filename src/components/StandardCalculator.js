@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { evaluate } from 'mathjs';  // Using mathjs for safe expression evaluation
 import { useNavigate } from 'react-router-dom';  // Import useNavigate from react-router-dom
-import { useHooks } from 'react-hooks';  // Import useHooks from react-hooks-lib
 
 function StandardCalculator() {
   const [input, setInput] = useState('');  // Stores the current input
@@ -9,25 +8,25 @@ function StandardCalculator() {
   const [history, setHistory] = useState([]);  // Stores history of previous calculations
   const navigate = useNavigate();  // Hook to navigate programmatically
 
-  // Function to handle button clicks and append the value to input
-  const handleInput = (value) => {
-    setInput(input + value);
-  };
+  // Memoized function to handle button clicks and append the value to input
+  const handleInput = useCallback((value) => {
+    setInput((prevInput) => prevInput + value);
+  }, []);
 
-  // Function to clear only the current input (Clear Entry - CE)
-  const clearEntry = () => {
+  // Memoized function to clear only the current input (Clear Entry - CE)
+  const clearEntry = useCallback(() => {
     setInput('');
-  };
+  }, []);
 
-  // Function to clear all (Clear All - C): input, result, and history
-  const clearAll = () => {
+  // Memoized function to clear all (Clear All - C): input, result, and history
+  const clearAll = useCallback(() => {
     setInput('');
     setResult('');
     setHistory([]);
-  };
+  }, []);
 
-  // Function to safely evaluate the expression using mathjs's evaluate method
-  const calculateResult = () => {
+  // Memoized function to safely evaluate the expression using mathjs's evaluate method
+  const calculateResult = useCallback(() => {
     try {
       const calculatedResult = evaluate(input);  // Safely evaluate the input using mathjs
       const historyItem = `${input} = ${calculatedResult}`;  // Create history item
@@ -37,15 +36,15 @@ function StandardCalculator() {
     } catch (error) {
       setResult('Error');  // Show error if invalid input
     }
-  };
+  }, [input, history]);
 
   // Function to navigate back to the home page
   const goToHome = () => {
     navigate('/');
   };
 
-  // Handle keyboard input for numbers and operations
-  const handleKeyDown = (e) => {
+  // Memoized handleKeyDown function
+  const handleKeyDown = useCallback((e) => {
     const { key } = e;
 
     if ((key >= '0' && key <= '9') || ['+', '-', '*', '/'].includes(key)) {
@@ -55,7 +54,7 @@ function StandardCalculator() {
     } else if (key === 'Escape') {
       clearAll();  // Clear all on Escape key
     }
-  };
+  }, [handleInput, calculateResult, clearAll]);
 
   // Add event listener for keyboard input when the component mounts
   useEffect(() => {
@@ -65,7 +64,7 @@ function StandardCalculator() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [input, history]);  // The event listener should be updated whenever the input or history changes
+  }, [handleKeyDown]);  // Ensure the effect runs whenever handleKeyDown changes
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-200 dark:bg-gray-900">

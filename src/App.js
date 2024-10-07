@@ -9,7 +9,6 @@ import DateCalculator from './components/DateCalculator';
 import TipCalculator from './components/TipCalculator';
 import FitnessCalculator from './components/FitnessCalculator';
 import CarbonFootprintCalculator from './components/CarbonFootprintCalculator';
-import CompoundInterestCalculator from './components/CompoundInterestCalculator';
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -45,7 +44,6 @@ function App() {
           <Route path='/tip' element={<TipCalculator />} />
           <Route path='/fitness' element={<FitnessCalculator />} />
           <Route path='/carbon' element={<CarbonFootprintCalculator />} />
-          <Route path='/compound' element={<CompoundInterestCalculator />} />
         </Routes>
       </Router>
     </div>

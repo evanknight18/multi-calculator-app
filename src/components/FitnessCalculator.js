@@ -62,49 +62,51 @@ function FitnessCalculator() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-green-500 to-blue-700">
-      <div className="bg-white text-black p-6 rounded-lg shadow-xl w-96">
-        <h2 className="text-3xl font-extrabold mb-4 text-center text-green-700 tracking-widest">Fitness Calculator</h2>
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-br from-green-500 to-blue-700 dark:from-gray-900 dark:to-gray-800">
+      <div className="bg-white dark:bg-gray-800 text-black dark:text-gray-100 p-6 rounded-lg shadow-lg w-96">
+        <h2 className="text-3xl font-extrabold mb-4 text-center text-green-700 dark:text-green-500 tracking-widest">
+          Fitness Calculator
+        </h2>
 
         <div className="mb-4">
-          <label className="block text-gray-800 font-semibold mb-1">Weight (kg)</label>
+          <label className="block text-gray-800 dark:text-gray-300 font-semibold mb-1">Weight (kg)</label>
           <input
             type="number"
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
-            className="w-full p-3 rounded-lg text-black border border-gray-300 focus:border-green-500"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-300 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:focus:border-green-400 dark:focus:ring-green-500"
             placeholder="Enter your weight"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-800 font-semibold mb-1">Height (cm)</label>
+          <label className="block text-gray-800 dark:text-gray-300 font-semibold mb-1">Height (cm)</label>
           <input
             type="number"
             value={height}
             onChange={(e) => setHeight(e.target.value)}
-            className="w-full p-3 rounded-lg text-black border border-gray-300 focus:border-green-500"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-300 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:focus:border-green-400 dark:focus:ring-green-500"
             placeholder="Enter your height"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-800 font-semibold mb-1">Age</label>
+          <label className="block text-gray-800 dark:text-gray-300 font-semibold mb-1">Age</label>
           <input
             type="number"
             value={age}
             onChange={(e) => setAge(e.target.value)}
-            className="w-full p-3 rounded-lg text-black border border-gray-300 focus:border-green-500"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-300 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:focus:border-green-400 dark:focus:ring-green-500"
             placeholder="Enter your age"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-800 font-semibold mb-1">Gender</label>
+          <label className="block text-gray-800 dark:text-gray-300 font-semibold mb-1">Gender</label>
           <select
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-            className="w-full p-3 rounded-lg text-black border border-gray-300 focus:border-green-500"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-300 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:focus:border-green-400 dark:focus:ring-green-500"
           >
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -112,11 +114,11 @@ function FitnessCalculator() {
         </div>
 
         <div className="mb-4">
-          <label className="block text-gray-800 font-semibold mb-1">Activity Level</label>
+          <label className="block text-gray-800 dark:text-gray-300 font-semibold mb-1">Activity Level</label>
           <select
             value={activityLevel}
             onChange={(e) => setActivityLevel(e.target.value)}
-            className="w-full p-3 rounded-lg text-black border border-gray-300 focus:border-green-500"
+            className="w-full p-3 rounded-lg border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-300 text-gray-700 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:focus:border-green-400 dark:focus:ring-green-500"
           >
             <option value="sedentary">Sedentary (little or no exercise)</option>
             <option value="lightly_active">Lightly Active (exercise 1-3 days/week)</option>
@@ -128,7 +130,7 @@ function FitnessCalculator() {
 
         <button
           onClick={calculateAll}
-          className="w-full bg-green-600 hover:bg-green-700 text-white p-3 rounded-lg mb-4 font-bold tracking-wider"
+          className="w-full bg-green-600 hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 text-white p-3 rounded-lg mb-4 font-bold tracking-wider"
         >
           Calculate
         </button>
@@ -153,14 +155,14 @@ function FitnessCalculator() {
 
         <button
           onClick={clearFields}
-          className="w-full bg-red-500 hover:bg-red-600 text-white p-3 rounded-lg mb-4 font-bold tracking-wider"
+          className="w-full bg-red-500 hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700 text-white p-3 rounded-lg mb-4 font-bold tracking-wider"
         >
           Clear Fields
         </button>
 
         <button
           onClick={goToHome}
-          className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 font-bold tracking-wider"
+          className="w-full p-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 font-bold tracking-wider"
         >
           Back to Home
         </button>

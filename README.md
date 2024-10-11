@@ -3,16 +3,15 @@
 A React-based application that includes various calculators for different needs such as standard arithmetic, scientific calculations, carbon footprint estimation, tip calculation, fitness metrics, currency conversion, and loan calculation. Each calculator is uniquely designed to match its purpose, providing an intuitive and user-friendly experience.
 
 ## Table of Contents
-- Overview
-- Features
-- Installation
-- Usage
-- Technologies
-- API Integration
-- Project Structure
-- Contributing
-- License
-- Contact
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technologies](#technologies)
+- [API Integration](#api-integration)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
 ## Overview
 The **Multi-Tool Calculator Suite** is a full-stack application providing multiple calculators:

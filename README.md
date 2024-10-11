@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# Multi-Tool Calculator Suite
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based application that includes various calculators for different needs such as standard arithmetic, scientific calculations, carbon footprint estimation, tip calculation, fitness metrics, currency conversion, and loan calculation. Each calculator is uniquely designed to match its purpose, providing an intuitive and user-friendly experience.
 
-## Available Scripts
+## Table of Contents
+- Overview
+- Features
+- Installation
+- Usage
+- Technologies
+- API Integration
+- Project Structure
+- Contributing
+- License
+- Contact
 
-In the project directory, you can run:
+## Overview
+The **Multi-Tool Calculator Suite** is a full-stack application providing multiple calculators:
+- Standard Calculator
+- Scientific Calculator
+- Carbon Footprint Calculator
+- Tip Calculator
+- Fitness Calculator (BMI, BMR, TDEE)
+- Currency Converter (with live API integration)
+- Loan Calculator
 
-### `npm start`
+Each calculator is built with distinct designs and layouts, and supports both dark and light mode.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
+- **Standard Calculator**: For basic arithmetic operations.
+- **Scientific Calculator**: Offers additional scientific functions.
+- **Carbon Footprint Calculator**: Estimates the user’s carbon footprint based on various inputs like transportation, household energy, and diet.
+- **Tip Calculator**: Quickly calculates tips and splits the bill between multiple people.
+- **Fitness Calculator**: Calculates BMI, BMR, and TDEE based on user inputs.
+- **Currency Converter**: Converts between different currencies using real-time exchange rates fetched via API.
+- **Loan Calculator**: Calculates monthly loan payments based on the loan amount, interest rate, and loan term.
+- **Dark/Light Mode**: Supports theme toggling for better user experience.
+- **Error Handling**: Provides validations and error messages for invalid inputs and API failures.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
+To run the **Multi-Tool Calculator Suite** locally, follow these steps:
 
-### `npm test`
+1. **Clone the repository**:
+   git clone https://github.com/your-username/multi-tool-calculator-suite.git
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Navigate to the project directory**:
+   cd multi-tool-calculator-suite
 
-### `npm run build`
+3. **Install dependencies**:
+   npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Set up the currency API**:
+   - Sign up for an API key at ExchangeRate-API.
+   - Create a `.env` file in the root directory and add your API key:
+     REACT_APP_CURRENCY_API_KEY=your-api-key-here
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
+1. **Run the application**:
+   npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Open your browser and navigate to http://localhost:3000 to view the app.
 
-### `npm run eject`
+3. Explore the different calculators by navigating through the app's interface.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Each calculator allows input, performs the respective calculation, and displays the result. For example, the currency converter fetches live exchange rates and performs conversions in real-time.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies
+- **React**: For building the user interface.
+- **Tailwind CSS**: For responsive and modern styling.
+- **JavaScript**: For handling logic and calculations.
+- **React Router**: For navigation between different calculators.
+- **ExchangeRate-API**: For currency conversion data.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API Integration
+The **Currency Converter** uses live exchange rates from the ExchangeRate-API. You will need to sign up for an API key and configure it in your `.env` file as shown in the installation instructions.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Project Structure
+Here's a quick look at the folder structure for the project:
 
-## Learn More
+public
+    index.html
+src
+    components
+        StandardCalculator.js
+        ScientificCalculator.js
+        CarbonFootprintCalculator.js
+        TipCalculator.js
+        FitnessCalculator.js
+        CurrencyConverter.js
+        LoanCalculator.js
+    utils
+        currencyAPI.js   # Contains functions for fetching live exchange rates
+    App.js
+    index.js
+    styles.css
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Contributing
+Contributions are welcome! If you have suggestions or improvements, feel free to submit a pull request or open an issue.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork the project.
+2. Create a new branch for your feature:
+   git checkout -b feature-branch
 
-### Code Splitting
+3. Commit your changes:
+   git commit -m "Add new feature"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Push to the branch:
+   git push origin feature-branch
 
-### Analyzing the Bundle Size
+5. Open a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### Making a Progressive Web App
+## Contact
+For any questions or feedback, feel free to contact me:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Email**: evanknight18@gmail.com
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

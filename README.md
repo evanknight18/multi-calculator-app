@@ -1,4 +1,4 @@
-# Multi-Tool Calculator Suite
+# Multi-Calculator
 
 A React-based application that includes various calculators for different needs such as standard arithmetic, scientific calculations, carbon footprint estimation, tip calculation, fitness metrics, currency conversion, and loan calculation. Each calculator is uniquely designed to match its purpose, providing an intuitive and user-friendly experience.
 
@@ -14,7 +14,7 @@ A React-based application that includes various calculators for different needs 
 - [Contact](#contact)
 
 ## Overview
-The **Multi-Tool Calculator Suite** is a full-stack application providing multiple calculators:
+The **Multi-Calculator** is a full-stack application providing multiple calculators:
 - Standard Calculator
 - Scientific Calculator
 - Carbon Footprint Calculator
@@ -40,10 +40,10 @@ Each calculator is built with distinct designs and layouts, and supports both da
 To run the **Multi-Tool Calculator Suite** locally, follow these steps:
 
 1. **Clone the repository**:
-   git clone https://github.com/your-username/multi-tool-calculator-suite.git
+   git clone https://github.com/your-username/multi-calculator-app.git
 
 2. **Navigate to the project directory**:
-   cd multi-tool-calculator-suite
+   cd multi-calculator-app
 
 3. **Install dependencies**:
    npm install

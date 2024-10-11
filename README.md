@@ -74,26 +74,6 @@ To run the **Multi-Tool Calculator Suite** locally, follow these steps:
 ## API Integration
 The **Currency Converter** uses live exchange rates from the ExchangeRate-API. You will need to sign up for an API key and configure it in your `.env` file as shown in the installation instructions.
 
-## Project Structure
-Here's a quick look at the folder structure for the project:
-
-public
-    index.html
-src
-    components
-        StandardCalculator.js
-        ScientificCalculator.js
-        CarbonFootprintCalculator.js
-        TipCalculator.js
-        FitnessCalculator.js
-        CurrencyConverter.js
-        LoanCalculator.js
-    utils
-        currencyAPI.js   # Contains functions for fetching live exchange rates
-    App.js
-    index.js
-    styles.css
-
 ## Contributing
 Contributions are welcome! If you have suggestions or improvements, feel free to submit a pull request or open an issue.
 
